@@ -1,8 +1,10 @@
+
+# coding:utf-8
 import requests,time
 from bs4 import BeautifulSoup
 url = 'https://www.zhihu.com/login/email'
 def get_captcha(data):
-    with open('captcha.gif','wb') as fb:
+    with open('captcha.gif','wb') as fb:#在本地查看图片并在python指令界面输入验证码
         fb.write(data)
     return input('captcha')
 
@@ -24,4 +26,4 @@ def login(username,password,oncaptcha):
     return resp 
 
 if __name__ == "__main__":
-    login('email','password',get_captcha)
+    login('email','password',get_captcha)#将email，password修改为自己的账号和密码
